@@ -1,4 +1,5 @@
 Gestion des Projets de Fin d’Études (PFE)
+
 Ce projet est une application de gestion des projets de fin d’études (PFE). Elle permet de gérer les projets, les étudiants, leurs encadrements et les associations entre étudiants et projets. L'application est développée en Java avec une base de données MySQL.
 
 Fonctionnalités
