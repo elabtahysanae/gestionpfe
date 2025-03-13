@@ -33,8 +33,7 @@ public class EncadrementService implements IDao<Encadrement> {
 
         try {
             PreparedStatement ps = connexion.getCn().prepareStatement(req);
-
-            ps.setInt(1, encadrement.getId());  
+            
             ps.setLong(2, encadrement.getProjet().getId());  
             ps.setInt(3, encadrement.getEtudiant().getId());  
             ps.setString(4, encadrement.getProfesseur());
@@ -54,7 +53,7 @@ public class EncadrementService implements IDao<Encadrement> {
 
         try {
             PreparedStatement ps = connexion.getCn().prepareStatement(req);
-            ps.setInt(1, encadrement.getId());
+           
             ps.executeUpdate();
             return true;
         } catch (SQLException ex) {
@@ -74,7 +73,7 @@ public class EncadrementService implements IDao<Encadrement> {
             ps.setLong(1, encadrement.getProjet().getId());  
             ps.setInt(2, encadrement.getEtudiant().getId());  
             ps.setString(3, encadrement.getProfesseur());
-            ps.setInt(4, encadrement.getId());
+          
 
             ps.executeUpdate();
             return true;
@@ -106,7 +105,7 @@ public class EncadrementService implements IDao<Encadrement> {
 
             
                 return new Encadrement(
-                    rs.getInt("id"),
+           
                     projet,
                     etudiant,
                     rs.getString("professeur")
@@ -129,7 +128,7 @@ public class EncadrementService implements IDao<Encadrement> {
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
-                Long projetId = rs.getLong("projet_id");  
+                 
                 int etudiantId = rs.getInt("etudiant_id");  
 
                 ProjetService projetService = new ProjetService();
@@ -140,7 +139,7 @@ public class EncadrementService implements IDao<Encadrement> {
 
 
                 encadrements.add(new Encadrement(
-                    rs.getInt("id"),
+                   
                     projet,
                     etudiant,
                     rs.getString("professeur")
