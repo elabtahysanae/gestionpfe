@@ -25,7 +25,7 @@ public class Test {
       
 Projet projet = new Projet(1,"Développement Web", "Projet sur le développement d'une application web", new Date(), new Date());
 Etudiant etudiant = new Etudiant(2, "Ahmadi", "Hassan", "hassan@gmail.com");
-Encadrement encadrement = new Encadrement(1, projet, etudiant, "Berrada Karim");
+Encadrement encadrement = new Encadrement( projet, etudiant, "Berrada Karim");
 
 
       projet.setTitre("Développement Mobile");
