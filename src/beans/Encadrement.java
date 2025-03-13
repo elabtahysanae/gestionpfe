@@ -10,25 +10,20 @@ package beans;
  */
 
 public class Encadrement {
-    private int id;
+  
     private Projet projet;
     private Etudiant etudiant;
     private String professeur;
 
    
-    public Encadrement(int id,Projet projet, Etudiant etudiant, String professeur) {
-       this.id = id;
+    public Encadrement(projet projet, Etudiant etudiant, String professeur) {
+
        this.projet = projet;
         this.etudiant = etudiant;
         this.professeur = professeur;
     }
 
-    public int getId() {
-        return id;
-    }
-    public void setId(int id) { 
-        this.id = id; 
-    }
+   
 
     public Projet getProjet() { 
         return projet;
