@@ -31,10 +31,11 @@ CREATE TABLE Étudiant (
 );
 
 CREATE TABLE Encadrement (
-    id INT AUTO_INCREMENT PRIMARY KEY,
     projet_id INT NOT NULL,
     etudiant_id INT NOT NULL,
     professeur VARCHAR(255) NOT NULL,
+    PRIMARY KEY (projet_id, etudiant_id),
     FOREIGN KEY (projet_id) REFERENCES Projet(id),
     FOREIGN KEY (etudiant_id) REFERENCES Étudiant(id)
 );
+
