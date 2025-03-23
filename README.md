@@ -23,7 +23,8 @@ Actuellement, le suivi des PFE est réalisé de manière **fragmentée**, utilis
 
 ##  Diagramme Use Case
 
-![Diagramme use case](src/images/useCase.png)
+![Diagramme use case]<img width="542" alt="usecase" src="https://github.com/user-attachments/assets/07142a8a-a6eb-42c7-8fe2-c646aba76870" />
+
 
 ---
 
