@@ -23,14 +23,14 @@ Actuellement, le suivi des PFE est réalisé de manière **fragmentée**, utilis
 
 ##  Diagramme Use Case
 
-![Diagramme use case]<img width="542" alt="usecase" src="https://github.com/user-attachments/assets/07142a8a-a6eb-42c7-8fe2-c646aba76870" />
+<img width="542" alt="usecase" src="https://github.com/user-attachments/assets/07142a8a-a6eb-42c7-8fe2-c646aba76870" />
 
 
 ---
 
 ##  Diagramme de Classe
 
-![Diagramme de classe](src/images/diagrammeClasse.png)
+<img width="512" alt="Screenshot 2025-03-23 093301" src="https://github.com/user-attachments/assets/689772d2-9a66-43a7-8272-1431b4e8224a" />
 
 ---
 
@@ -70,14 +70,6 @@ CREATE TABLE encadrement (
 );
 ```
 
----
-
-##  Architecture
-
-![Architecture](src/images/archetecture.png)
-
----
-
 ##  Technologies
 
 - ** Langage :** Java
@@ -94,7 +86,7 @@ CREATE TABLE encadrement (
 
 ##  Vidéo sur les interfaces de l'application
 
-🔗 [Voir la vidéo](https://github.com/user-attachments/assets/a7f188b7-c6f9-4046-b48c-512cdded63df)
+
 
 ---
 
