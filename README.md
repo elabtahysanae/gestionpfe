@@ -1,41 +1,89 @@
-Gestion des Projets de Fin d’Études (PFE)
+Gestion des Projets de Fin d'Études (PFE)
 
-Ce projet est une application de gestion des projets de fin d’études (PFE). Elle permet de gérer les projets, les étudiants, leurs encadrements et les associations entre étudiants et projets. L'application est développée en Java avec une base de données MySQL.
+Contexte
 
-Fonctionnalités
-Ajouter un projet : Permet d'ajouter un nouveau projet avec son titre, sa description, la date de début et la date de fin.
-Associer un étudiant à un projet : Permet d'ajouter un étudiant à un projet en spécifiant le professeur encadrant.
-Filtrer les projets par encadrant : Permet de lister tous les projets encadrés par un professeur donné.
-Rechercher un projet par titre : Permet de rechercher un projet en fonction de son titre.
+Dans le cadre de la gestion des Projets de Fin d'Études (PFE) au sein d'une institution académique, il est essentiel de disposer d'un outil efficace pour le suivi et la gestion des projets des étudiants. Cet outil permettra de centraliser les informations relatives aux projets, aux étudiants et aux professeurs encadrants, facilitant ainsi la supervision et l'évaluation des travaux.
+
+Problématique
+
+Actuellement, le suivi des PFE est réalisé de manière fragmentée, utilisant des méthodes manuelles ou des outils disparates. Cela entraîne des difficultés dans la gestion des informations, la communication entre les acteurs et la production de rapports précis.
+
+Objectifs
+
+Centraliser les informations : Regrouper toutes les données relatives aux PFE, aux étudiants et aux professeurs encadrants dans une base de données unique.
+
+Faciliter la gestion : Offrir une interface conviviale pour la création, la modification et la suppression des PFE.
+
+Améliorer le suivi : Permettre aux professeurs encadrants de suivre l'avancement des projets de leurs étudiants.
+
+Optimiser la recherche : Permettre une recherche efficace des PFE par titre et un filtrage par professeur.
+
+Diagramme use case
+
+
+
+Diagramme de classe
+
+
+
 Structure de la Base de Données
-La base de données MySQL est composée des tables suivantes :
 
-Projet : Contient les informations sur les projets.
-Étudiant : Contient les informations sur les étudiants.
-Encadrement : Contient les informations sur l'encadrement des projets par les étudiants et les professeurs.
-Schéma de la Base de Données:
+Le système repose sur trois tables principales :
 
-CREATE TABLE Projet (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    titre VARCHAR(255) NOT NULL,
-    description TEXT,
-    date_debut DATE NOT NULL,
-    date_fin DATE NOT NULL
-);
+Projet : Informations sur les projets (id, titre, description, dates de début et de fin).
 
-CREATE TABLE Étudiant (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nom VARCHAR(255) NOT NULL,
-    prénom VARCHAR(255) NOT NULL,
+Etudiant : Informations sur les étudiants (id, nom, prénom, email).
+
+Encadrement : Lien entre les projets, les étudiants et les professeurs (projet_id, etudiant_id, professeur).
+
+Script de la Base de Données
+
+CREATE TABLE etudiant (
+    id INT(11) AUTO_INCREMENT PRIMARY KEY,
+    nom VARCHAR(100) NOT NULL,
+    prenom VARCHAR(255) NULL,
     email VARCHAR(255) NOT NULL UNIQUE
 );
 
-CREATE TABLE Encadrement (
-    projet_id INT NOT NULL,
-    etudiant_id INT NOT NULL,
-    professeur VARCHAR(255) NOT NULL,
-    PRIMARY KEY (projet_id, etudiant_id),
-    FOREIGN KEY (projet_id) REFERENCES Projet(id),
-    FOREIGN KEY (etudiant_id) REFERENCES Étudiant(id)
+CREATE TABLE projet (
+    id INT(11) AUTO_INCREMENT PRIMARY KEY,
+    titre VARCHAR(255) NOT NULL,
+    description TEXT NULL,
+    dateDebut DATE NULL,
+    dateFin DATE NULL
 );
 
+CREATE TABLE encadrement (
+    projet_id INT(11) NOT NULL,
+    etudiant_id INT(11) NOT NULL,
+    professeur VARCHAR(255) NULL,
+    PRIMARY KEY (projet_id, etudiant_id),
+    FOREIGN KEY (projet_id) REFERENCES projet(id) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (etudiant_id) REFERENCES etudiant(id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+Architecture
+
+
+
+Technologies
+
+Langage : Java
+
+Framework d'interface graphique : Java Swing
+
+Base de données : MySQL
+
+Bibliothèque graphique : JFreeChart
+
+Outils de développement :
+
+IDE Java : NetBeans
+
+Outil de diagramme : draw.io
+
+Outil de gestion de base de données : phpMyAdmin
+
+Accès aux données : JDBC
+
+Vidéo sur les interfaces de l'application
