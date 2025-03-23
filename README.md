@@ -1,43 +1,49 @@
-Gestion des Projets de Fin d'Études (PFE)
+#  Gestion des Projets de Fin d'Études (PFE)
 
-Contexte
+##  Contexte
 
-Dans le cadre de la gestion des Projets de Fin d'Études (PFE) au sein d'une institution académique, il est essentiel de disposer d'un outil efficace pour le suivi et la gestion des projets des étudiants. Cet outil permettra de centraliser les informations relatives aux projets, aux étudiants et aux professeurs encadrants, facilitant ainsi la supervision et l'évaluation des travaux.
+Dans le cadre de la gestion des **Projets de Fin d'Études (PFE)** au sein d'une institution académique, il est essentiel de disposer d'un outil efficace pour le suivi et la gestion des projets des étudiants. Cet outil permettra de **centraliser** les informations relatives aux projets, aux étudiants et aux professeurs encadrants, facilitant ainsi la **supervision et l'évaluation** des travaux.
 
-Problématique
+---
 
-Actuellement, le suivi des PFE est réalisé de manière fragmentée, utilisant des méthodes manuelles ou des outils disparates. Cela entraîne des difficultés dans la gestion des informations, la communication entre les acteurs et la production de rapports précis.
+##  Problématique
 
-Objectifs
+Actuellement, le suivi des PFE est réalisé de manière **fragmentée**, utilisant des **méthodes manuelles** ou des **outils disparates**. Cela entraîne des **difficultés** dans la gestion des informations, la communication entre les acteurs et la production de rapports précis.
 
-Centraliser les informations : Regrouper toutes les données relatives aux PFE, aux étudiants et aux professeurs encadrants dans une base de données unique.
+---
 
-Faciliter la gestion : Offrir une interface conviviale pour la création, la modification et la suppression des PFE.
+##  Objectifs
 
-Améliorer le suivi : Permettre aux professeurs encadrants de suivre l'avancement des projets de leurs étudiants.
+-  **Centraliser les informations :** Regrouper toutes les données relatives aux PFE, aux étudiants et aux professeurs encadrants dans une base de données unique.
+-  **Faciliter la gestion :** Offrir une interface conviviale pour la création, la modification et la suppression des PFE.
+-  **Améliorer le suivi :** Permettre aux professeurs encadrants de suivre l'avancement des projets de leurs étudiants.
+-  **Optimiser la recherche :** Permettre une recherche efficace des PFE par titre et un filtrage par professeur.
 
-Optimiser la recherche : Permettre une recherche efficace des PFE par titre et un filtrage par professeur.
+---
 
-Diagramme use case
+##  Diagramme Use Case
 
+![Diagramme use case](src/images/useCase.png)
 
+---
 
-Diagramme de classe
+##  Diagramme de Classe
 
+![Diagramme de classe](src/images/diagrammeClasse.png)
 
+---
 
-Structure de la Base de Données
+## 🛠 Structure de la Base de Données
 
-Le système repose sur trois tables principales :
+Le système repose sur **trois tables principales** :
 
-Projet : Informations sur les projets (id, titre, description, dates de début et de fin).
+1.  **Projet** : Informations sur les projets *(id, titre, description, dates de début et de fin).*
+2.  **Etudiant** : Informations sur les étudiants *(id, nom, prénom, email).*
+3.  **Encadrement** : Lien entre les projets, les étudiants et les professeurs *(projet_id, etudiant_id, professeur).*
 
-Etudiant : Informations sur les étudiants (id, nom, prénom, email).
+### 🗄 Script de la Base de Données
 
-Encadrement : Lien entre les projets, les étudiants et les professeurs (projet_id, etudiant_id, professeur).
-
-Script de la Base de Données
-
+```sql
 CREATE TABLE etudiant (
     id INT(11) AUTO_INCREMENT PRIMARY KEY,
     nom VARCHAR(100) NOT NULL,
@@ -61,29 +67,33 @@ CREATE TABLE encadrement (
     FOREIGN KEY (projet_id) REFERENCES projet(id) ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (etudiant_id) REFERENCES etudiant(id) ON DELETE CASCADE ON UPDATE CASCADE
 );
+```
 
-Architecture
+---
 
+##  Architecture
 
+![Architecture](src/images/archetecture.png)
 
-Technologies
+---
 
-Langage : Java
+## 🔧 Technologies
 
-Framework d'interface graphique : Java Swing
+- ** Langage :** Java
+- ** Framework d'interface graphique :** Java Swing
+- ** Base de données :** MySQL
+- ** Bibliothèque graphique :** JFreeChart
+- ** Outils de développement :**
+  -  IDE Java : NetBeans
+  -  Outil de diagramme : draw.io
+  -  Outil de gestion de base de données : phpMyAdmin
+- ** Accès aux données :** JDBC
 
-Base de données : MySQL
+---
 
-Bibliothèque graphique : JFreeChart
+##  Vidéo sur les interfaces de l'application
 
-Outils de développement :
+🔗 [Voir la vidéo](https://github.com/user-attachments/assets/a7f188b7-c6f9-4046-b48c-512cdded63df)
 
-IDE Java : NetBeans
+---
 
-Outil de diagramme : draw.io
-
-Outil de gestion de base de données : phpMyAdmin
-
-Accès aux données : JDBC
-
-Vidéo sur les interfaces de l'application
