@@ -33,7 +33,7 @@ Actuellement, le suivi des PFE est réalisé de manière **fragmentée**, utilis
 
 ---
 
-## 🛠 Structure de la Base de Données
+##  Structure de la Base de Données
 
 Le système repose sur **trois tables principales** :
 
@@ -41,7 +41,7 @@ Le système repose sur **trois tables principales** :
 2.  **Etudiant** : Informations sur les étudiants *(id, nom, prénom, email).*
 3.  **Encadrement** : Lien entre les projets, les étudiants et les professeurs *(projet_id, etudiant_id, professeur).*
 
-### 🗄 Script de la Base de Données
+###  Script de la Base de Données
 
 ```sql
 CREATE TABLE etudiant (
@@ -77,7 +77,7 @@ CREATE TABLE encadrement (
 
 ---
 
-## 🔧 Technologies
+##  Technologies
 
 - ** Langage :** Java
 - ** Framework d'interface graphique :** Java Swing
